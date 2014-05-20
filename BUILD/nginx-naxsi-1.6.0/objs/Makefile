@@ -112,7 +112,7 @@ MAIL_DEPS = src/mail/ngx_mail.h \
 MAIL_INCS = -I src/mail
 
 
-ADDON_DEPS = $(CORE_DEPS)  /home/builder/rpmbuild/BUILD/nginx-naxsi-1.6.0/naxsi-0.53-2/naxsi_src/naxsi.h $(HTTP_DEPS) $(MAIL_DEPS)
+ADDON_DEPS = $(CORE_DEPS)  /home/builder/rpmbuild/nginx-naxsi/BUILD/nginx-naxsi-1.6.0/naxsi-0.53-2/naxsi_src/naxsi.h $(HTTP_DEPS) $(MAIL_DEPS)
 
 
 objs/nginx:	objs/src/core/nginx.o \
@@ -1401,38 +1401,38 @@ objs/src/mail/ngx_mail_proxy_module.o:	$(CORE_DEPS) $(MAIL_DEPS) \
 
 
 objs/addon/naxsi_src/naxsi_runtime.o:	$(ADDON_DEPS) \
-	/home/builder/rpmbuild/BUILD/nginx-naxsi-1.6.0/naxsi-0.53-2/naxsi_src/naxsi_runtime.c
+	/home/builder/rpmbuild/nginx-naxsi/BUILD/nginx-naxsi-1.6.0/naxsi-0.53-2/naxsi_src/naxsi_runtime.c
 	$(CC) -c $(CFLAGS)  $(ALL_INCS) \
 		-o objs/addon/naxsi_src/naxsi_runtime.o \
-		/home/builder/rpmbuild/BUILD/nginx-naxsi-1.6.0/naxsi-0.53-2/naxsi_src/naxsi_runtime.c
+		/home/builder/rpmbuild/nginx-naxsi/BUILD/nginx-naxsi-1.6.0/naxsi-0.53-2/naxsi_src/naxsi_runtime.c
 
 
 objs/addon/naxsi_src/naxsi_config.o:	$(ADDON_DEPS) \
-	/home/builder/rpmbuild/BUILD/nginx-naxsi-1.6.0/naxsi-0.53-2/naxsi_src/naxsi_config.c
+	/home/builder/rpmbuild/nginx-naxsi/BUILD/nginx-naxsi-1.6.0/naxsi-0.53-2/naxsi_src/naxsi_config.c
 	$(CC) -c $(CFLAGS)  $(ALL_INCS) \
 		-o objs/addon/naxsi_src/naxsi_config.o \
-		/home/builder/rpmbuild/BUILD/nginx-naxsi-1.6.0/naxsi-0.53-2/naxsi_src/naxsi_config.c
+		/home/builder/rpmbuild/nginx-naxsi/BUILD/nginx-naxsi-1.6.0/naxsi-0.53-2/naxsi_src/naxsi_config.c
 
 
 objs/addon/naxsi_src/naxsi_utils.o:	$(ADDON_DEPS) \
-	/home/builder/rpmbuild/BUILD/nginx-naxsi-1.6.0/naxsi-0.53-2/naxsi_src/naxsi_utils.c
+	/home/builder/rpmbuild/nginx-naxsi/BUILD/nginx-naxsi-1.6.0/naxsi-0.53-2/naxsi_src/naxsi_utils.c
 	$(CC) -c $(CFLAGS)  $(ALL_INCS) \
 		-o objs/addon/naxsi_src/naxsi_utils.o \
-		/home/builder/rpmbuild/BUILD/nginx-naxsi-1.6.0/naxsi-0.53-2/naxsi_src/naxsi_utils.c
+		/home/builder/rpmbuild/nginx-naxsi/BUILD/nginx-naxsi-1.6.0/naxsi-0.53-2/naxsi_src/naxsi_utils.c
 
 
 objs/addon/naxsi_src/naxsi_skeleton.o:	$(ADDON_DEPS) \
-	/home/builder/rpmbuild/BUILD/nginx-naxsi-1.6.0/naxsi-0.53-2/naxsi_src/naxsi_skeleton.c
+	/home/builder/rpmbuild/nginx-naxsi/BUILD/nginx-naxsi-1.6.0/naxsi-0.53-2/naxsi_src/naxsi_skeleton.c
 	$(CC) -c $(CFLAGS)  $(ALL_INCS) \
 		-o objs/addon/naxsi_src/naxsi_skeleton.o \
-		/home/builder/rpmbuild/BUILD/nginx-naxsi-1.6.0/naxsi-0.53-2/naxsi_src/naxsi_skeleton.c
+		/home/builder/rpmbuild/nginx-naxsi/BUILD/nginx-naxsi-1.6.0/naxsi-0.53-2/naxsi_src/naxsi_skeleton.c
 
 
 objs/addon/naxsi_src/naxsi_json.o:	$(ADDON_DEPS) \
-	/home/builder/rpmbuild/BUILD/nginx-naxsi-1.6.0/naxsi-0.53-2/naxsi_src/naxsi_json.c
+	/home/builder/rpmbuild/nginx-naxsi/BUILD/nginx-naxsi-1.6.0/naxsi-0.53-2/naxsi_src/naxsi_json.c
 	$(CC) -c $(CFLAGS)  $(ALL_INCS) \
 		-o objs/addon/naxsi_src/naxsi_json.o \
-		/home/builder/rpmbuild/BUILD/nginx-naxsi-1.6.0/naxsi-0.53-2/naxsi_src/naxsi_json.c
+		/home/builder/rpmbuild/nginx-naxsi/BUILD/nginx-naxsi-1.6.0/naxsi-0.53-2/naxsi_src/naxsi_json.c
 
 
 manpage:	objs/nginx.8
