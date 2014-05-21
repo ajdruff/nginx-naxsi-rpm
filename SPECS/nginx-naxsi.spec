@@ -1,9 +1,14 @@
 #
+#ref:https://fedoraproject.org/wiki/How_to_create_an_RPM_package
 %define nginx_home %{_localstatedir}/cache/nginx
 %define nginx_user nginx
 %define nginx_group nginx
+#nginx-naxsi versions
+%define nginx_version 1.6.0-1
 %define naxsi_version 0.53-2
 
+#redefine source directory location so we can place all sources in a subdirectory for easier management
+%define _sourcedir %{_topdir}/SOURCES/%{name}
 
 # distribution specific definitions
 %define use_systemd (0%{?fedora} && 0%{?fedora} >= 18) || (0%{?rhel} && 0%{?rhel} >= 7)
@@ -45,23 +50,25 @@ Requires(pre): pwdutils
 
 # end of distribution specific definitions
 
-Summary: Nginx High performance web server with Naxsi Web Application Firewall
+Summary: Nginx %{nginx_version} High performance web server with Naxsi %{naxsi_version} Web Application Firewall
 Name: nginx-naxsi
 Version: 1.6.0
-Release: 1%{?dist}.ngx
-URL: http://nginx.org/
+Release: 2%{?dist}.ngx
+URL: https://github.com/simpliwp/rpm-repos/
 
-Source0: http://nginx.org/download/%{name}-%{version}.tar.gz
+
+Source0: %{name}-%{version}.tar.gz
 Source1: logrotate
 Source2: nginx.init
 Source3: nginx.sysconf
-Source4: nginx.conf
+Source4: nginx-naxsi/nginx.conf
 Source5: nginx.vh.default.conf
 Source6: nginx.vh.example_ssl.conf
 Source7: nginx.suse.init
 Source8: nginx.service
 Source9: nginx.upgrade.sh
 Source10: naxsi-%{naxsi_version}.tar.gz
+
 Source11: naxsi-mysite.rules
 
 
@@ -74,8 +81,8 @@ BuildRequires: pcre-devel
 Provides: webserver
 
 %description
-nginx [engine x] is an HTTP and reverse proxy server, as well as
-a mail proxy server. Naxsi is a Web Application Firewall (WAF).
+nginx [engine x] %{nginx_version} is an HTTP and reverse proxy server, as well as
+a mail proxy server. Naxsi %{naxsi_version} is a Web Application Firewall (WAF).
 %package debug
 Summary: debug version of nginx
 Group: System Environment/Daemons
@@ -197,7 +204,7 @@ make %{?_smp_mflags}
 # install naxsi core rules
 %{__install} -m 644 -p %{_builddir}/%{name}-%{version}/naxsi-%{naxsi_version}/naxsi_config/naxsi_core.rules \
    $RPM_BUILD_ROOT%{_sysconfdir}/nginx/naxsi_core.rules
-   
+	
 # install naxsi mysite rules 
 %{__install} -m 644 -p %{SOURCE11} \
 $RPM_BUILD_ROOT%{_sysconfdir}/nginx/naxsi-mysite.rules
@@ -354,116 +361,10 @@ if [ $1 -ge 1 ]; then
 fi
 
 %changelog
+* Tue May 20 2014 Andrew Druffner <andrew@joelhost.com>
+- Changed versioning and sources structure
+
 
 * Mon May 19 2014 Andrew Druffner <andrew@joelhost.com>
 - 1.6.0
-- added Naxsi web module
-
-* Thu Apr 24 2014 Konstantin Pavlov <thresh@nginx.com>
-- 1.6.0
-- http-auth-request module added
-
-* Tue Mar 18 2014 Sergey Budnevitch <sb@nginx.com>
-- 1.4.7
-- spec cleanup
-- openssl version dependence added
-- upgrade() function in the init script improved
-- warning added when binary upgrade returns non-zero exit code
-
-* Tue Mar  4 2014 Sergey Budnevitch <sb@nginx.com>
-- 1.4.6
-
-* Tue Feb 11 2014 Konstantin Pavlov <thresh@nginx.com>
-- 1.4.5
-
-* Tue Nov 19 2013 Sergey Budnevitch <sb@nginx.com>
-- 1.4.4
-
-* Tue Oct  8 2013 Sergey Budnevitch <sb@nginx.com>
-- 1.4.3
-
-* Tue Jul 17 2013 Sergey Budnevitch <sb@nginx.com>
-- 1.4.2
-
-* Tue May  6 2013 Sergey Budnevitch <sb@nginx.com>
-- 1.4.1
-
-* Wed Apr 24 2013 Sergey Budnevitch <sb@nginx.com>
-- gunzip module added
-- 1.4.0
-
-* Tue Apr  2 2013 Sergey Budnevitch <sb@nginx.com>
-- set permissions on default log files at installation
-- 1.2.8
-
-* Tue Feb 12 2013 Sergey Budnevitch <sb@nginx.com>
-- excess slash removed from --prefix
-- 1.2.7
-
-* Tue Dec 11 2012 Sergey Budnevitch <sb@nginx.com>
-- 1.2.6
-
-* Tue Nov 13 2012 Sergey Budnevitch <sb@nginx.com>
-- 1.2.5
-
-* Tue Sep 25 2012 Sergey Budnevitch <sb@nginx.com>
-- 1.2.4
-
-* Tue Aug  7 2012 Sergey Budnevitch <sb@nginx.com>
-- 1.2.3
-- nginx-debug package now actually contains non stripped binary
-
-* Tue Jul  3 2012 Sergey Budnevitch <sb@nginx.com>
-- 1.2.2
-
-* Tue Jun  5 2012 Sergey Budnevitch <sb@nginx.com>
-- 1.2.1
-
-* Mon Apr 23 2012 Sergey Budnevitch <sb@nginx.com>
-- 1.2.0
-
-* Thu Apr 12 2012 Sergey Budnevitch <sb@nginx.com>
-- 1.0.15
-
-* Thu Mar 15 2012 Sergey Budnevitch <sb@nginx.com>
-- 1.0.14
-- OpenSUSE init script and SuSE specific changes to spec file added
-
-* Mon Mar  5 2012 Sergey Budnevitch <sb@nginx.com>
-- 1.0.13
-
-* Mon Feb  6 2012 Sergey Budnevitch <sb@nginx.com>
-- 1.0.12
-- banner added to install script
-
-* Thu Dec 15 2011 Sergey Budnevitch <sb@nginx.com>
-- 1.0.11
-- init script enhancements (thanks to Gena Makhomed)
-- one second sleep during upgrade replaced with 0.1 sec usleep
-
-* Tue Nov 15 2011 Sergey Budnevitch <sb@nginx.com>
-- 1.0.10
-
-* Tue Nov  1 2011 Sergey Budnevitch <sb@nginx.com>
-- 1.0.9
-- nginx-debug package added
-
-* Tue Oct 11 2011 Sergey Budnevitch <sb@nginx.com>
-- spec file cleanup (thanks to Yury V. Zaytsev)
-- log dir permitions fixed
-- logrotate creates new logfiles with nginx owner
-- "upgrade" argument to init-script added (based on fedora one)
-
-* Sat Oct  1 2011 Sergey Budnevitch <sb@nginx.com>
-- 1.0.8
-- built with mp4 module
-
-* Fri Sep 30 2011 Sergey Budnevitch <sb@nginx.com>
-- 1.0.7
-
-* Tue Aug 30 2011 Sergey Budnevitch <sb@nginx.com>
-- 1.0.6
-- replace "conf.d/*" config include with "conf.d/*.conf" in default nginx.conf
-
-* Tue Aug 10 2011 Sergey Budnevitch
-- Initial release
+- initial release

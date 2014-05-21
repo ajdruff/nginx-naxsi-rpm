@@ -2,8 +2,8 @@
 %dir /usr/lib/debug/usr
 %dir /usr/lib/debug/usr/sbin
 %dir /usr/lib/debug/.build-id
-%dir /usr/lib/debug/.build-id/e7
+%dir /usr/lib/debug/.build-id/89
 /usr/lib/debug/usr/sbin/nginx.debug
-/usr/lib/debug/.build-id/e7/317cd59d3b666b7a2202d04b690c2cc99f4e4c
-/usr/lib/debug/.build-id/e7/317cd59d3b666b7a2202d04b690c2cc99f4e4c.debug
+/usr/lib/debug/.build-id/89/b87c5000898961fd34865001c6c4d2be1cc06c
+/usr/lib/debug/.build-id/89/b87c5000898961fd34865001c6c4d2be1cc06c.debug
 /usr/src/debug/nginx-naxsi-1.6.0

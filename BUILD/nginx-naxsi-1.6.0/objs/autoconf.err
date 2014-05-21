@@ -188,8 +188,8 @@ cc -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --p
 ----------------------------------------
 checking for crypt()
 
-/tmp/cc9eisBn.o: In function `main':
-/home/builder/rpmbuild/nginx-naxsi/BUILD/nginx-naxsi-1.6.0/objs/autotest.c:7: undefined reference to `crypt'
+/tmp/ccM4wNsI.o: In function `main':
+/home/builder/rpmbuild/BUILD/nginx-naxsi-1.6.0/objs/autotest.c:7: undefined reference to `crypt'
 collect2: ld returned 1 exit status
 ----------
 
@@ -297,8 +297,8 @@ checking for statvfs()
 ----------------------------------------
 checking for dlopen()
 
-/tmp/ccl5Mwko.o: In function `main':
-/home/builder/rpmbuild/nginx-naxsi/BUILD/nginx-naxsi-1.6.0/objs/autotest.c:7: undefined reference to `dlopen'
+/tmp/ccMGGX6s.o: In function `main':
+/home/builder/rpmbuild/BUILD/nginx-naxsi-1.6.0/objs/autotest.c:7: undefined reference to `dlopen'
 collect2: ld returned 1 exit status
 ----------
 
@@ -506,8 +506,8 @@ checking for setproctitle()
 
 objs/autotest.c: In function 'main':
 objs/autotest.c:7: warning: implicit declaration of function 'setproctitle'
-/tmp/ccdIC0cB.o: In function `main':
-/home/builder/rpmbuild/nginx-naxsi/BUILD/nginx-naxsi-1.6.0/objs/autotest.c:7: undefined reference to `setproctitle'
+/tmp/ccO9oknO.o: In function `main':
+/home/builder/rpmbuild/BUILD/nginx-naxsi-1.6.0/objs/autotest.c:7: undefined reference to `setproctitle'
 collect2: ld returned 1 exit status
 ----------
 
@@ -535,7 +535,7 @@ checking for pwrite()
 ----------------------------------------
 checking for sys_nerr
 
-/tmp/ccFmomqW.o: In function `printf':
+/tmp/ccPO9k6Z.o: In function `printf':
 /usr/include/bits/stdio2.h:105: warning: `sys_nerr' is deprecated; use `strerror' or `strerror_r' instead
 135
 ----------------------------------------
@@ -565,9 +565,9 @@ checking for System V shared memory
 ----------------------------------------
 checking for POSIX semaphores
 
-/tmp/ccbwuIgz.o: In function `main':
-/home/builder/rpmbuild/nginx-naxsi/BUILD/nginx-naxsi-1.6.0/objs/autotest.c:8: undefined reference to `sem_init'
-/home/builder/rpmbuild/nginx-naxsi/BUILD/nginx-naxsi-1.6.0/objs/autotest.c:9: undefined reference to `sem_destroy'
+/tmp/ccxOjulJ.o: In function `main':
+/home/builder/rpmbuild/BUILD/nginx-naxsi-1.6.0/objs/autotest.c:8: undefined reference to `sem_init'
+/home/builder/rpmbuild/BUILD/nginx-naxsi-1.6.0/objs/autotest.c:9: undefined reference to `sem_destroy'
 collect2: ld returned 1 exit status
 ----------
 
