@@ -8,7 +8,7 @@ rpm build files used to create a custom Nginx rpm that includes the Naxsi WAF.
 
 This project provides the rpmbuild files necessary to build a custom rpm for Nginx on CentOS, adding the naxsi Web Application Firewall. 
 
-***Do you just want to install a nginx-naxsi rpm for CentOS?** If all you want to do is download an already compiled rpm for CentOS, you can do so using my nginx-naxsi project. Save yourself some headaches and don't compile and run this project since I've already built the rpm for you. This project is only for those who want to be able to customize the rpm or use it as a template to create other customized rpms*
+***Do you just want to install a nginx-naxsi rpm for CentOS?** If all you want to do is download an already compiled rpm for CentOS, you can do so using [simpliwp/rpm-repos](https://github.com/simpliwp/rpm-repos). Save yourself some headaches and don't compile and run this project since I've already built the rpm for you. This project is only for those who want to be able to customize the rpm or use it as a template to create other customized rpms*
 
 References:   
 
