@@ -188,7 +188,7 @@ cc -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --p
 ----------------------------------------
 checking for crypt()
 
-/tmp/cczjLXRg.o: In function `main':
+/tmp/ccuVcA17.o: In function `main':
 /home/builder/rpmbuild/BUILD/nginx-naxsi-1.6.0/objs/autotest.c:7: undefined reference to `crypt'
 collect2: ld returned 1 exit status
 ----------
@@ -297,7 +297,7 @@ checking for statvfs()
 ----------------------------------------
 checking for dlopen()
 
-/tmp/ccpk8lSa.o: In function `main':
+/tmp/ccGlphm0.o: In function `main':
 /home/builder/rpmbuild/BUILD/nginx-naxsi-1.6.0/objs/autotest.c:7: undefined reference to `dlopen'
 collect2: ld returned 1 exit status
 ----------
@@ -506,7 +506,7 @@ checking for setproctitle()
 
 objs/autotest.c: In function 'main':
 objs/autotest.c:7: warning: implicit declaration of function 'setproctitle'
-/tmp/cccDECe2.o: In function `main':
+/tmp/ccFOeKAT.o: In function `main':
 /home/builder/rpmbuild/BUILD/nginx-naxsi-1.6.0/objs/autotest.c:7: undefined reference to `setproctitle'
 collect2: ld returned 1 exit status
 ----------
@@ -535,7 +535,7 @@ checking for pwrite()
 ----------------------------------------
 checking for sys_nerr
 
-/tmp/ccvycO9e.o: In function `printf':
+/tmp/ccE7F5B7.o: In function `printf':
 /usr/include/bits/stdio2.h:105: warning: `sys_nerr' is deprecated; use `strerror' or `strerror_r' instead
 135
 ----------------------------------------
@@ -565,7 +565,7 @@ checking for System V shared memory
 ----------------------------------------
 checking for POSIX semaphores
 
-/tmp/cchAGT18.o: In function `main':
+/tmp/cc9Zy5yM.o: In function `main':
 /home/builder/rpmbuild/BUILD/nginx-naxsi-1.6.0/objs/autotest.c:8: undefined reference to `sem_init'
 /home/builder/rpmbuild/BUILD/nginx-naxsi-1.6.0/objs/autotest.c:9: undefined reference to `sem_destroy'
 collect2: ld returned 1 exit status
