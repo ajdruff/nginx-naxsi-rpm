@@ -1,6 +1,8 @@
 GitHub Project: [nginx-naxsi-rpm](https://github.com/simpliwp/nginx-naxsi-rpmbuild-centos6)
 ============================
 
+this is a test change
+
 rpm build files used to create a custom Nginx rpm that includes the Naxsi WAF. 
 
 
